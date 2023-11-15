@@ -45,15 +45,15 @@ pipeline {
             echo 'deploying on kubernetes cluster'
             script{
                //sh "docker pull srinathsilla/student-survey-form:${env.BUILD_NUMBER}"
-               sh "kubectl --kubeconfig /home/ubuntu/.kube/config set image deployment/hw2-cluster container-0=anjalip1306/survey:${BUILD_NUMBER}"
+               sh "kubectl --kubeconfig /home/ubuntu/.kube/config set image deployment/survey container-0=anjalip1306/survey:${BUILD_NUMBER}"
             }
          }
       }
 
-      stage('Deploying to Rancher using Load Balancer as a service') {
-         steps {
-            script{
-               sh "kubectl --kubeconfig /home/ubuntu/.kube/config set image deployment/hw2-cluster-lb container-0=anjalip1306/survey:${BUILD_NUMBER}"
+      //stage('Deploying to Rancher using Load Balancer as a service') {
+        // steps {
+          //  script{
+            //   sh "kubectl --kubeconfig /home/ubuntu/.kube/config set image deployment/hw2-cluster-lb container-0=anjalip1306/survey:${BUILD_NUMBER}"
             }
          }
       }

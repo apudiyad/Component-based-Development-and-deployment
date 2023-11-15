@@ -11,6 +11,8 @@ pipeline {
             echo 'Building...'
             script{
                sh 'rm -rf *.war'
+               sh 'ls -l src/main/webapp/'
+               sh 'pwd'
                sh 'jar -cvf form.war -C src/main/webapp/ .'
                docker.withRegistry('',registryCredential){
                   def customImage = docker.build("anjalip1306/survey:${env.BUILD_NUMBER}")

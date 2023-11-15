@@ -32,6 +32,14 @@ pipeline {
          }
       }
 
+      stage('Setup Kubectl') {
+            steps {
+                script {
+                    def kubectlPath = sh(script: 'which kubectl', returnStdout: true).trim()
+                    env.PATH = "${env.PATH}:${kubectlPath}"
+                }
+            }
+        }
       stage('Deploying to Rancher to single node(deployed in 3 replicas)') {
          steps {
             echo 'deploying on kubernetes cluster'

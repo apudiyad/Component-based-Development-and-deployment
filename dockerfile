@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 tomcat:9.0.82-jdk11-openjdk
+FROM --platform=linux/amd64 tomcat:10.1-jdk11-openjdk
 
 COPY form.war /usr/local/tomcat/webapps/
 

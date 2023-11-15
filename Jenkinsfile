@@ -1,6 +1,6 @@
 pipeline {
    environment {
-        registry = "anjalip1306/survey"
+        registry = "anjalip1306/student-form"
         registryCredential = 'dockerhub'
     }
    agent any
@@ -11,9 +11,9 @@ pipeline {
             echo 'Building...'
             script{
                sh 'rm -rf *.war'
-               sh 'jar -cvf student-survey-form.war -C src/main/webapp/ .'
+               sh 'jar -cvf form.war -C src/main/webapp/ .'
                docker.withRegistry('',registryCredential){
-                  def customImage = docker.build("anjalip1306/survey:${env.BUILD_NUMBER}")
+                  def customImage = docker.build("anjalip1306/student-form:${env.BUILD_NUMBER}")
                }
             }
          }
@@ -24,7 +24,7 @@ pipeline {
             echo 'pushing to image to docker hub'
             script{
                docker.withRegistry('',registryCredential){
-                  sh "docker push anjalip1306/survey:${env.BUILD_NUMBER}"
+                  sh "docker push anjalip1306/student-form:${env.BUILD_NUMBER}"
                }
             }
          }
@@ -35,7 +35,7 @@ pipeline {
             echo 'deploying on kubernetes cluster'
             script{
                //sh "docker pull srinathsilla/student-survey-form:${env.BUILD_NUMBER}"
-               sh "kubectl --kubeconfig /home/ubuntu/.kube/config set image deployment/survey container-0=anjalip1306/survey:${BUILD_NUMBER}"
+               sh "kubectl --kubeconfig /home/ubuntu/.kube/config set image deployment/survey container-0=anjalip1306/student-form:${BUILD_NUMBER}"
             }
          }
       }

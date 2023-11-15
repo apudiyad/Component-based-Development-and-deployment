@@ -1,6 +1,6 @@
 pipeline {
    environment {
-        registry = "anjalip1306/form"
+        registry = "anjalip1306/survey"
         registryCredential = 'dockerhub'
     }
    agent any
@@ -13,7 +13,7 @@ pipeline {
                sh 'rm -rf *.war'
                sh 'jar -cvf form.war -C src/main/webapp/ .'
                docker.withRegistry('',registryCredential){
-                  def customImage = docker.build("anjalip1306/form:${env.BUILD_NUMBER}")
+                  def customImage = docker.build("anjalip1306/survey:${env.BUILD_NUMBER}")
                }
             }
          }
@@ -24,7 +24,7 @@ pipeline {
             echo 'pushing to image to docker hub'
             script{
                docker.withRegistry('',registryCredential){
-                  sh "docker push anjalip1306/form:${env.BUILD_NUMBER}"
+                  sh "docker push anjalip1306/survey:${env.BUILD_NUMBER}"
                }
             }
          }
@@ -35,7 +35,7 @@ pipeline {
             echo 'deploying on kubernetes cluster'
             script{
                //sh "docker pull srinathsilla/student-survey-form:${env.BUILD_NUMBER}"
-               sh "kubectl --kubeconfig /home/ubuntu/.kube/config set image deployment/hw2-cluster container-0=anjalip1306/form:${BUILD_NUMBER}"
+               sh "kubectl --kubeconfig /home/ubuntu/.kube/config set image deployment/hw2-cluster container-0=anjalip1306/survey:${BUILD_NUMBER}"
             }
          }
       }
@@ -43,7 +43,7 @@ pipeline {
       stage('Deploying to Rancher using Load Balancer as a service') {
          steps {
             script{
-               sh "kubectl --kubeconfig /home/ubuntu/.kube/config set image deployment/hw2-cluster-lb container-0=anjalip1306/form:${BUILD_NUMBER}"
+               sh "kubectl --kubeconfig /home/ubuntu/.kube/config set image deployment/hw2-cluster-lb container-0=anjalip1306/survey:${BUILD_NUMBER}"
             }
          }
       }

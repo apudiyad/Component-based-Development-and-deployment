@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Config
+clusters:
+- name: "form"
+  cluster:
+    server: "https://ec2-3-228-169-84.compute-1.amazonaws.com/k8s/clusters/c-m-qkns2w4h"
+    certificate-authority-data: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJ2akNDQ\
+      VdPZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQkdNUnd3R2dZRFZRUUtFeE5rZVc1aGJXbGoKY\
+      kdsemRHVnVaWEl0YjNKbk1TWXdKQVlEVlFRRERCMWtlVzVoYldsamJHbHpkR1Z1WlhJdFkyRkFNV\
+      GN3TURBdwpNVEE0TnpBZUZ3MHlNekV4TVRReU1qTXhNamRhRncwek16RXhNVEV5TWpNeE1qZGFNR\
+      Vl4SERBYUJnTlZCQW9UCkUyUjVibUZ0YVdOc2FYTjBaVzVsY2kxdmNtY3hKakFrQmdOVkJBTU1IV\
+      1I1Ym1GdGFXTnNhWE4wWlc1bGNpMWoKWVVBeE56QXdNREF4TURnM01Ga3dFd1lIS29aSXpqMENBU\
+      VlJS29aSXpqMERBUWNEUWdBRVpQUnVycTRNZE1pZwpDUytUZDlTNi82K25QdThiRFFRVWlGclMyV\
+      3UySEJkdDdzS0dWZk84OTZ0K21pNlpmSTl1d0RvNEJnQlhiQlp0ClpkeTBjV1duc2FOQ01FQXdEZ\
+      1lEVlIwUEFRSC9CQVFEQWdLa01BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0hRWUQKVlIwT0JCWUVGQ\
+      Ws5eUdSNTAxZ1QrTHhGQ05uOGRZRlZhYTVLTUFvR0NDcUdTTTQ5QkFNQ0Ewa0FNRVlDSVFENQpNR\
+      zhMYWtscU0xWXJjUEFDMG5wa0tqbkd6YkRDdHpKbCt0NVhtWm4zT0FJaEFNZ05oUzlSTTNka3FzV\
+      lhyZVZ2CmlTVk5PeC9RME9henhLWTFkaGlKRVNmcAotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0t"
+
+users:
+- name: "form"
+  user:
+    token: "kubeconfig-user-jb2p529lmn:slrljh5c7ggq94h8m665c5bwzcnpndbpprqnhfpnrq8gj2kddjxf87"
+
+
+contexts:
+- name: "form"
+  context:
+    user: "form"
+    cluster: "form"
+
+current-context: "form"

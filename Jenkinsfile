@@ -5,6 +5,23 @@ pipeline {
     }
    agent any
 
+    stages {
+        stage('Setup Kubectl') {
+            steps {
+                script {
+                    def kubectlPath = sh(script: 'which kubectl', returnStdout: true).trim()
+                    env.PATH = "${env.PATH}:${kubectlPath}"
+                }
+            }
+            post {
+                always {
+                    script {
+                        sh "chmod -R 700 /home/ubuntu/.kube/config"  // Adjust permissions if necessary
+                    }
+                }
+            }
+        }
+
    stages {
       stage('Build') {
          steps {

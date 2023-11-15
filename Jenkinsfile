@@ -16,7 +16,10 @@ pipeline {
             post {
                 always {
                     script {
-                        sh "chmod -R 644 /home/ubuntu/.kube/config"  // Adjust permissions if necessary
+                        sh "chown -R jenkins:jenkins /home/ubuntu/.kube"
+                        sh "chmod 700 /home/ubuntu/.kube"
+                        sh "chmod 600 /home/ubuntu/.kube/config"
+
                     }
                 }
             }

@@ -1,0 +1,31 @@
+body {
+  background: #006633;
+}
+
+h1{
+  color: #006633;
+  border: 5px solid #006633;
+  text-align: center;
+  box-shadow: #FFCC33;
+  background-color: #FFCC33;
+}
+
+h2, h3{
+  color: #FFCC33;
+}
+
+.content {
+  max-width: 1200px;
+  margin: auto;
+  background: white;
+  padding: 10px;
+}
+
+.control-label:after {
+  content:"*";
+  color:red;
+}
+
+p{
+  text-align: justify;
+}

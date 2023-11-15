@@ -1,0 +1,193 @@
+<!-- Srinath Silla - G01368980 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Department Survey Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <style>
+        h1 {
+            text-transform: uppercase;
+        }
+
+        button {
+            margin: 20px 10px 10px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>Student Survey Form</h1>
+        <form>
+
+            <div class="row mb-4">
+                <div class="col">
+                    <label for="firstName" class="control-label">First Name</label>
+                    <input type="text" class="form-control" id="firstName" aria-describedby="inputGroupPrepend2"
+                        required autocomplete="name" autofocus="autofocus" placeholder="John">
+                </div>
+                <div class="col">
+                    <label class="control-label" for="lastName">Last Name</label>
+                    <input type="text" id="lastName" class="form-control input-custom" autocomplete="name"
+                        placeholder="Doe" required />
+
+                </div>
+
+            </div>
+
+            <div class="row mb-4">
+                <div class="col">
+                    <label for="email" class="control-label">Email</label>
+                    <input type="text" class="form-control" id="email" aria-describedby="inputGroupPrepend2" required
+                        autocomplete="name" autofocus="autofocus" placeholder="johndoe@xyz.com">
+                </div>
+            </div>
+
+
+
+
+
+            <div class="row mb-4">
+                <div class="col">
+                    <label class="control-label" for="cityName">City</label>
+                    <input type="text" id="cityName" class="form-control input-custom" autocomplete="on"
+                        placeholder="Fairfax" required />
+
+                </div>
+                <div class="col">
+                    <label class="control-label" for="zip">Zip</label>
+                    <input type="text" id="zip" class="form-control input-custom" autocomplete="on" placeholder="22031"
+                        required />
+
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col">
+                    <label class="control-label" for="street">Street Address</label>
+                    <input type="text" id="street" class="form-control input-custom" autocomplete="street-address"
+                        placeholder="1234 Main Street" required />
+
+                </div>
+                <div class="col">
+                    <label class="control-label" for="state">State</label>
+                    <input type="text" id="state" class="form-control input-custom" placeholder="Virginia" required />
+
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col">
+                    <!-- <label class="control-label" for="form9Example6">URL</label>
+                <input type="text" id="form9Example6" class="form-control input-custom" autocomplete="url"
+                    placeholder="https://xyz.com" required/> -->
+                    <label class="control-label" for="phone">Phone#</label>
+                    <input type="text" id="phone" class="form-control input-custom" autocomplete="tel"
+                        placeholder="123-456-6789" required />
+                </div>
+                <div class="col">
+                    <label class="control-label" for="survey-date">Date of Survey</label>
+                    <input type="date" id="survey-date" class="form-control input-custom" autocomplete="on" required />
+
+                </div>
+            </div>
+
+            <div style="margin: 10px;">
+                <h6>Things you most liked about the campus</h6>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="students">
+                    <label class="form-check-label" for="inlineCheckbox1">students</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="location">
+                    <label class="form-check-label" for="inlineCheckbox2">location</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="campus">
+                    <label class="form-check-label" for="inlineCheckbox3">campus</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="atmosphere">
+                    <label class="form-check-label" for="inlineCheckbox4">atmosphere</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="dorm rooms">
+                    <label class="form-check-label" for="inlineCheckbox5">dorm rooms</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="sports">
+                    <label class="form-check-label" for="inlineCheckbox5">sports</label>
+                </div>
+            </div>
+
+            <div style="margin: 10px;">
+                <h6>Reason for choosing GMU</h6>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                        value="friends">
+                    <label class="form-check-label" for="inlineRadio1">friends</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                        value="television">
+                    <label class="form-check-label" for="inlineRadio2">television</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                        value="internet">
+                    <label class="form-check-label" for="inlineRadio3">internet</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4"
+                        value="other">
+                    <label class="form-check-label" for="inlineRadio4">other</label>
+                </div>
+            </div>
+
+            <div class="row" style="margin: 10px 0px;">
+
+                <div class="dropdown col">
+                    <label for="sel-options">
+                        <h6>How likely you would recommend GMU to other prospective students?</h6>
+                    </label>
+                    <button class="btn btn-secondary dropdown-toggle" id="sel-options" type="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Choose an option
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Very Likely</a></li>
+                        <li><a class="dropdown-item" href="#">Likely</a></li>
+                        <li><a class="dropdown-item" href="#">Unlikely</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="form-group" style="margin: 10px 0px;">
+                <label for="raffle" class="col-lg-2">Raffle
+                </label>
+                <textarea name="user-message" id="raffle" class="form-control" cols="20" rows="2"
+                    placeholder="Enter at least ten comma separated numbers ranging from 1 through 100."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="comments" class="col-lg-2">Additional Comments
+                </label>
+                <textarea name="user-message" id="comments" class="form-control" cols="20" rows="3"
+                    placeholder="Type here.."></textarea>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button><button type="cancel"
+                class="btn btn-danger">Cancel</button>
+        </form>
+    </div>
+</body>
+
+</html>

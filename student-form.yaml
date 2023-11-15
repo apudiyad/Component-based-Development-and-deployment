@@ -20,7 +20,7 @@ clusters:
 users:
 - name: "student-form"
   user:
-    token: "kubeconfig-user-5qkqdpwfpq:7lvv2bxwm4rgsc9hgb6zqzfngx68hxns589bvpddhn8p6vm4zr8rlw"
+    token: "kubeconfig-user-5qkqdjdprk:hqzv5rg8mshdxd265qc57c6tjfjdqftb5wk6blbcdxdc8blj4xqks4"
 
 
 contexts:
